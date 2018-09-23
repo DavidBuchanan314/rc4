@@ -7,6 +7,8 @@ which would fail on any invalid unicode sequences.
 This implementation uses bytes/bytearray objects to work with binary data, and
 has been tested against [RFC6229](https://tools.ietf.org/rfc/rfc6229.txt).
 
+Supports python 3.4+.
+
 ## Example usage:
 
 ```python
