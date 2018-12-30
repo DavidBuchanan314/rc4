@@ -35,7 +35,7 @@ class RC4:
         """
         Generator that returns the bytes of keystream
         """
-        S = self.S[::]
+        S = self.S.copy()
         x = y = 0
         while True:
             x = (x + 1) & 0xff
