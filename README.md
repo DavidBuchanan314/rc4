@@ -14,9 +14,14 @@ Supports python 3.4+.
 ```python
 from rc4 import RC4
 
-ciphertext = RC4(b"secret").crypt(b"Not very secret message")
-print(ciphertext)
+cipher = RC4(b"secret", streaming=False)
+msg = b"Not very secret message"
 
-plaintext = RC4(b"secret").crypt(ciphertext)
-print(plaintext)
+ciphertext = cipher.crypt(msg)
+print(ciphertext) #=> b'\xa3Y\xa6<\xf4\xc1\xa4\xdf\x12\xb8\xde\xbf\x81\x83\x81\x17\xc0R\x01\x91\xe2\x94\xa1'
+
+plaintext = cipher.crypt(ciphertext)
+print(plaintext) #=> b'Not very secret message'
+
+assert(plaintext == msg)
 ```
