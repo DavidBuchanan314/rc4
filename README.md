@@ -4,6 +4,8 @@ A python3 RC4 implementation that doesn't suck. (i.e. it's actually binary-safe.
 Literally every other implementation I could find relied on chr/ord to decode bytes,
 which would fail on any invalid unicode sequences.
 
+Update: [PyCrypto's implementation](https://pycryptodome.readthedocs.io/en/latest/src/cipher/arc4.html) Isn't that bad, and you should probably use that instead, if you can. However, it places arbitrary restrictions on key size, which is a dealbreaker for some applications (i.e. legacy hardware/software backwards-compatibility).
+
 This implementation uses bytes/bytearray objects to work with binary data, and
 has been tested against [RFC6229](https://tools.ietf.org/rfc/rfc6229.txt).
 
