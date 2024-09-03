@@ -1,6 +1,9 @@
 # rc4
 A python3 RC4 implementation that doesn't suck. (i.e. it's actually binary-safe...)
 
+> [!WARNING]
+> RC4 is cryptographically broken. Treat it as if it were rot13, base64, or other trivial encoding. Only use this if you know precisely why you're using it.
+
 Literally every other implementation I could find relied on chr/ord to decode bytes,
 which would fail on any invalid unicode sequences.
 
